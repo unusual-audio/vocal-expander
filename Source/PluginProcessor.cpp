@@ -22,14 +22,10 @@ VocalExpanderAudioProcessor::VocalExpanderAudioProcessor()
                        )
 #endif
 {
-    addParameter (threshold = new juce::AudioParameterFloat (
-        "threshold", "Threshold", -96.0f, 0.0f, -72.0f));
-    addParameter (ratio = new juce::AudioParameterFloat (
-        "ratio", "Ratio", 1.0f, 10.0f, 1.5f));
-    addParameter (attack = new juce::AudioParameterFloat (
-        "attack", "Attack", 0.0f, 100.0f, 5.0f));
-    addParameter (release = new juce::AudioParameterFloat (
-        "release", "Release", 0.0f, 1000.0f, 200.0f));
+    addParameter (threshold = new juce::AudioParameterFloat ({"threshold", 1}, "Threshold", -96.0f, 0.0f, -72.0f));
+    addParameter (ratio = new juce::AudioParameterFloat ({"ratio", 1}, "Ratio", 1.0f, 10.0f, 1.5f));
+    addParameter (attack = new juce::AudioParameterFloat ({"attack", 1}, "Attack", 0.0f, 100.0f, 5.0f));
+    addParameter (release = new juce::AudioParameterFloat ({"release", 1}, "Release", 0.0f, 1000.0f, 200.0f));
 }
 
 VocalExpanderAudioProcessor::~VocalExpanderAudioProcessor()
